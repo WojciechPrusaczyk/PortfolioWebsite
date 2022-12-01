@@ -13,8 +13,7 @@ class IndexController extends AbstractController
     public function index(): \Symfony\Component\HttpFoundation\Response
     {
         return $this->render('/index.html.twig', [
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/IndexController.php',
+            'title' => 'Wojciech Prusaczyk: portfolio',
         ]);
     }
 }

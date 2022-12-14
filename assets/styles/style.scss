@@ -11,7 +11,6 @@ body{
     background-color: $blackColour;
     color: $fontColour;
     font-family: Helvetica;
-    
 }
 .main{
     margin-left: 15%;
@@ -64,13 +63,43 @@ body{
                     animation-iteration-count: infinite;
                     background-color: $darkGreenColour;
                     border-bottom: 4px solid #08394e;
-                    text-shadow: 0 1px 0 $darkerGreenColour, 1px 1px 0 $darkerGreenColour;
                 }
             }
 
         }
 }
-
+#technologies .technologies{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1{
+        width: auto;
+        justify-content: center;
+    }
+    div .flex-column{
+        margin-left: 2rem;
+        margin-right: 2rem;
+        display: inline-flex;
+        div p {
+            margin-top: 10px;
+            margin-bottom: 0!important;
+            display: flex;
+            h3{
+                margin-left: 5px;
+            }
+        }
+        .progressBar{
+            border: 3px solid #08394e;
+            height: 35px;
+            width: 70%;
+            .progress{
+                background-color: $greenColour;
+                height: 30px;
+            }
+        }
+    }
+}
 
 .paragraph{
     margin-bottom:10%;
@@ -86,7 +115,6 @@ body{
         h3, input, textarea{
             display: flex;
             justify-content: center;
-            
         }
         input[type="text"], textarea{
             width: 60%;
@@ -146,44 +174,21 @@ body{
     }
 
 }
-.technologies{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .progressBar{
-        border: 3px solid #08394e;
-        height: 35px;
-        width: 70%;
-        .progress{
-            background-color: $greenColour;
-            height: 30px;
-        }
-    }
-    .x{
-        width: 25%;
-        height: 400px;
-        float: left;
-        clear: both;
-        margin-left: auto ;
-        margin-right: auto;
-    }
-}
 
 @keyframes backgroundColorPalette {
     0% {
       color: #0B4F6C;
       border-color: #0B4F6C;
+        background-color: $darkGreenColour;
     }
-    25% {
+    33% {
       color: #a401ef;
       border-color: #a401ef;
+        background-color: $darkGreenColour;
     }
-    50% {
-      color: #f1ad25;
-      border-color: #f1ad25;
-    }
-    75% {
-      color: #DA2C38;
-      border-color: #DA2C38;
+    66% {
+        color: #DA2C38;
+        border-color: #DA2C38;
+        background-color: $darkGreenColour;
     }
 }

@@ -1,4 +1,6 @@
 @import "assets/styles/variables";
+@import "~bootstrap/scss/bootstrap";
+
 *{
     margin: 0;
     padding: 0;
@@ -15,9 +17,6 @@ body{
     margin-left: 15%;
     margin-top: 5%;
     padding: auto;
-    width: 85%;
-    float: left;
-    
 }
 .footer{
     margin: auto;

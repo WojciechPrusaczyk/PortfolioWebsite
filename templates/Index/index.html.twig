@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    <title>{{ title }}</title>
+{% endblock %}
+{% block body %}
+    <ul class='sidebar'>
+        <li class="col-lg-3 col-sm-6 text-center pt-2">
+            <a href='https://github.com/WojciechPrusaczyk'>
+                <i class='bx bxl-github'></i>
+                <p>&nbsp&nbspMy GitHub</p>
+            </a>
+
+        </li>
+
+        <li class="col-lg-3 col-sm-6 text-center pt-2">
+            <a href='#'>
+                <i class='bx bxs-trophy' ></i>
+                <p>Achievements</p>
+            </a>
+
+        </li>
+
+        <li class="col-lg-3 col-sm-6 text-center pt-2">
+            <a href='#'>
+                <i class='bx bx-code-curly' ></i>
+                <p>Technologies</p>
+            </a>
+
+        </li>
+
+        <li class="col-lg-3 col-sm-6 text-center pt-2">
+            <a href='#contact'>
+                <i class='bx bxs-contact' ></i>
+                 <p>Contact me</p>
+            </a>
+        </li>
+    </ul>
+
+    <div class='main paragraph'>
+        <h1>Hello World!</h1>
+        <h1>My name is Wojciech Prusaczyk!</h1>
+        <br>
+        <p>
+                <h2>Welcome to my portfolio website</h2>
+                My dream since 2012 is to become a "Web Developer". <br>
+                Once i created my first Website i promised myself, <br>
+                that someday this dream will become true. <br>
+                <br>
+                Check the links on the navigation bar to learn more about me :)
+        </p>
+    </div>
+    </div>
+
+
+    <div id="achievements" class="achievements paragraph">
+    </div>
+
+    <div id="technologies"></div>
+
+    <div class="about-me paragraph">
+
+    </div>
+    <div id="contact" class="contact paragraph row w-100 m-0 p-0">
+        <div class="contact-form overall col-lg-6 col-md-12 my-5">
+            <form action="mailer.php" method="POST">
+                <input type="text" name="name" value="Your Name" onfocus="if(value=='Your Name'){value=''}" onblur="if(value==''){value='Your Name'}"><br>
+
+                <input type="text" name="email" value="Your email address" onfocus="if(value=='Your email address'){value=''}" onblur="if(value==''){value='Your email address'}"><br>
+
+                <input type="text" name="phone" value="Your Mobile phone number" onfocus="if(value=='Your Mobile phone number'){value=''}" onblur="if(value==''){value='Your Mobile phone number'}"><br>
+
+                <input type="text" name="title" value="Submission" onfocus="if(value=='Submission'){value=''}" onblur="if(value==''){value='Submission'}"><br>
+
+                <textarea type="text" name="text" onload="value='Write your message here'" onfocus="if(value=='Write your message here'){value=''}" onblur="if(value==''){value='Write your message here'}"></textarea><br>
+
+                <br>
+                <input type="submit" value="Send" name="submit" onclick="style.color='#FBFBFF';style.borderColor='#FBFBFF';setTimeout(() => { style.color='#0B4F6C';style.borderColor='#0B4F6C'; }, 100);">
+            </form>
+        </div>
+        <div class="contact-graphic overall col-lg-6 col-md-12">
+            Git
+        </div>
+    </div>
+    {% block footer %}
+    {% endblock %}
+    {% block scripts %}
+        {{ encore_entry_script_tags('react_js') }}
+    {% endblock %}
+{% endblock %}

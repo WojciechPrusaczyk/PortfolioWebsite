@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 function Bar(props) {
     return (
     <div>
-        <p><img src={props.source} alt={props.name + " logo"} className=""/><h3>{props.name}</h3></p>
+        <p><div className={"nameWIthLogo"}><img src={props.source} alt={props.name + " logo"} className=""/><h3 className={"my-1"}>{props.name}</h3></div></p>
         <div className="progressBar">
             <div className="progress" style={{width: props.progress}}>&nbsp;</div>
         </div>
@@ -31,45 +31,42 @@ class Board extends React.Component {
     }
 
     render() { return (
-        <div className="technologies paragraph">
-            <h1 className="d-flex flex-row">My strength in technologies:</h1>
-            <div className="flex-row justify-content-center">
-                <div className="flex-column">
+            <div className="technologies paragraph flex-row row justify-content-center">
+                <div className="flex-column col-4">
                     <h2>Programming languages</h2><br/>
-                    {this.renderBar("PHP", "", 70)}
+                    {this.renderBar("PHP", "/build/images/PHP.png", 70)}
                     <br/><br/>
 
-                    {this.renderBar("JavaScript", "../../myPortfolio/assets/images/JS.png", 70)}
+                    {this.renderBar("JavaScript", "/build/images/JS.png", 70)}
                     <br/><br/>
 
-                    {this.renderBar("VBA", "../../myPortfolio/assets/images/VB.png", 35)}
+                    {this.renderBar("VBA", "/build/images/VB.png", 35)}
                     <br/><br/>
                 </div>
-                <div className="flex-column">
+                <div className="flex-column col-4">
                     <h2>Frameworks and DataBases</h2><br/>
-                    {this.renderBar("Symfony", "../../myPortfolio/assets/images/Symfony.png", 70)}
+                    {this.renderBar("Symfony", "/build/images/Symfony.png", 70)}
                     <br/><br/>
 
-                    {this.renderBar("ReactJS", "./../myPortfolio/assets/images/ReactJS.png", 30)}
+                    {this.renderBar("ReactJS", "/build/images/ReactJS.png", 30)}
                     <br/><br/>
 
-                    {this.renderBar("MariaDB / SQL Lite", "../../myPortfolio/assets/images/MariaDB.png", 75)}
+                    {this.renderBar("MariaDB / SQL Lite", "/build/images/MariaDB.png", 75)}
                     <br/><br/>
 
                     {this.renderBar("Zend", "", 30)}
                     <br/><br/>
                 </div>
-                <div className="flex-column">
+                <div className="flex-column col-4">
                     <h2>Other tools</h2><br/>
 
-                    {this.renderBar("HTML5", "../../myPortfolio/assets/images/HTML5.png", 80)}
+                    {this.renderBar("HTML5", "/build/images/HTML5.png", 80)}
                     <br/><br/>
 
-                    {this.renderBar("CSS3 / SASS", "../../myPortfolio/assets/images/HTML5.png", 65)}
+                    {this.renderBar("CSS3 / SASS", "/build/images/HTML5.png", 65)}
                     <br/><br/>
                 </div>
             </div>
-        </div>
     );
 }}
 

@@ -4,38 +4,40 @@
     <title>{{ title }}</title>
 {% endblock %}
 {% block body %}
-    <ul class='sidebar'>
-        <li class="col-lg-3 col-sm-6 text-center pt-2">
-            <a href='https://github.com/WojciechPrusaczyk'>
-                <i class='bx bxl-github'></i>
-                <p>&nbsp&nbspMy GitHub</p>
-            </a>
+    <header>
+        <ul class='sidebar'>
+            <li class="col-lg-3 col-sm-6 col-12 text-center pt-2">
+                <a href='https://github.com/WojciechPrusaczyk'>
+                    <i class='bx bxl-github'></i>
+                    <p>&nbsp&nbspMy GitHub</p>
+                </a>
 
-        </li>
+            </li>
 
-        <li class="col-lg-3 col-sm-6 text-center pt-2">
-            <a href='#'>
-                <i class='bx bxs-trophy' ></i>
-                <p>Achievements</p>
-            </a>
+            <li class="col-lg-3 col-sm-6 col-12 text-center pt-2">
+                <a href='#'>
+                    <i class='bx bxs-trophy' ></i>
+                    <p>Achievements</p>
+                </a>
 
-        </li>
+            </li>
 
-        <li class="col-lg-3 col-sm-6 text-center pt-2">
-            <a href='#'>
-                <i class='bx bx-code-curly' ></i>
-                <p>Technologies</p>
-            </a>
+            <li class="col-lg-3 col-sm-6 col-12 text-center pt-2">
+                <a href='#technologies'>
+                    <i class='bx bx-code-curly' ></i>
+                    <p>Technologies</p>
+                </a>
 
-        </li>
+            </li>
 
-        <li class="col-lg-3 col-sm-6 text-center pt-2">
-            <a href='#contact'>
-                <i class='bx bxs-contact' ></i>
-                 <p>Contact me</p>
-            </a>
-        </li>
-    </ul>
+            <li class="col-lg-3 col-sm-6 col-12 text-center pt-2">
+                <a href='#contact'>
+                    <i class='bx bxs-contact' ></i>
+                     <p>Contact me</p>
+                </a>
+            </li>
+        </ul>
+    </header>
 
     <div class='main paragraph'>
         <h1>Hello World!</h1>
@@ -50,7 +52,6 @@
                 Check the links on the navigation bar to learn more about me :)
         </p>
     </div>
-    </div>
 
 
     <div id="achievements" class="achievements paragraph">
@@ -59,11 +60,11 @@
     <div id="technologies-header" class="align-content-center"><h1>My strength in technologies:</h1></div>
     <div id="technologies"></div>
 
-    <div class="about-me paragraph">
+    <div id="about-me" class="about-me paragraph">
 
     </div>
-    <div id="contact" class="contact paragraph row w-100 m-0 p-0">
-        <div class="contact-form overall col-lg-6 col-md-12 my-5">
+    <div id="contact" class="contact paragraph">
+        <div class="contact-form overall col-lg-6 col-12 my-5">
             <form action="mailer.php" method="POST">
                 <input type="text" name="name" value="Your Name" onfocus="if(value=='Your Name'){value=''}" onblur="if(value==''){value='Your Name'}"><br>
 
@@ -79,12 +80,13 @@
                 <input type="submit" value="Send" name="submit" onclick="style.color='#FBFBFF';style.borderColor='#FBFBFF';setTimeout(() => { style.color='#0B4F6C';style.borderColor='#0B4F6C'; }, 100);">
             </form>
         </div>
-        <div class="contact-graphic overall col-lg-6 col-md-12">
+        <div class="contact-graphic overall col-lg-6 col-12">
             Git
         </div>
     </div>
-    {% block footer %}
-    {% endblock %}
+    <footer class="footer">
+        <h3>Designed & Developed by Wojciech Prusaczyk 2022</h3>
+    </footer>
     {% block scripts %}
         {{ encore_entry_script_tags('react_js') }}
     {% endblock %}

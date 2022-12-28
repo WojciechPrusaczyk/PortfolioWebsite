@@ -4,52 +4,46 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 body{
-    position: relative;
-    background-color: $blackColour;
+    background-color: $bgColour;
     color: $fontColour;
     font-family: Helvetica;
 }
 .main{
     margin-left: 15%;
     margin-top: 5%;
-    padding: auto;
 }
 .footer{
-    margin: auto;
-    padding: auto;
     width: 100%;
     background-color: $greenColour;
-    color:$blackColour;
+    color:$bgColour;
     font-family: monospace;
     font-weight: bold;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    clear: both;
 }
 .sidebar{
     position: relative;
     font-size: 110%;
     background-color: $greenColour;
     color: white;
+    flex-wrap: wrap;
     top:0;
     list-style: none;
     display: flex;
     justify-content: center;
+    padding: 0;
     li{
             display: flex;
             justify-content: center;
             align-items: center;
             a{
-                color: $blackColour;
+                color: $bgColour;
                 font-size: 125%;
                 text-decoration: none;
-                width: 100%;
-                height: 100%;
                 margin: auto;
                 border-bottom: 4px solid $greenColour;
                 i{
@@ -75,7 +69,7 @@ body{
 #technologies{
     flex-wrap: wrap;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     h1{
         width: auto;
@@ -86,13 +80,16 @@ body{
     }
     div .flex-column{
         display: inline-flex;
+        padding: 10px;
+        margin: 10px;
+        background-color: $midBgColour;
         div p {
             margin-top: 10px;
-            margin-bottom: 0!important;
-            display: flex;
-            .nameWithLogo{
-                justify-content: center;
+            margin-bottom: 5px;
+            div.nameWithLogo{
+                justify-content: left;
                 width: 100%;
+                display: flex;
             }
             img{
                 max-width: 3rem;
@@ -103,12 +100,12 @@ body{
             }
         }
         .progressBar{
-            border: 3px solid #08394e;
+            border: 3px solid $darkerBgColour;
             height: 35px;
-            width: 70%;
+            width: 100%;
             .progress{
                 background-color: $greenColour;
-                height: 30px;
+                height: 100%;
             }
         }
     }
@@ -118,11 +115,10 @@ body{
     margin-bottom:10%;
 }
 .contact{
+    *{box-sizing: border-box;}
     .overall{
         position: relative;
-        width: 50%;
         float: left;
-        height: 550px;
     }
     .contact-form{
         h3, input, textarea{
@@ -140,7 +136,7 @@ body{
             font-size:0.9vw;
             font-weight: bold;
             border: $greenColour 3px solid;
-            background-color: #0a435a;
+            background-color: $darkerBgColour;
             &:hover{
                 text-decoration: none;
                 width: 60.5%;
@@ -159,12 +155,12 @@ body{
             font-size:1.2vw;
             font-weight: bold;
             background-color: $greenColour;
-            color: $blackColour;
+            color: $bgColour;
             border: none;
             &:hover{
                 width: 27%;
                 height: 47px;
-                border: 4px solid #0a435a ;
+                border: 4px solid $darkerBgColour ;
             }
         }
         textarea{

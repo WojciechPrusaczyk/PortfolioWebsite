@@ -66,20 +66,13 @@
     </div>
     <div id="footer-components" class="contact paragraph py-5">
         <div id="contact" class="contact-form overall col-lg-6 col-12">
-            <form action="mailer.php" method="POST">
-                <input type="text" name="name" value="Your Name" onfocus="if(value=='Your Name'){value=''}" onblur="if(value==''){value='Your Name'}"><br>
-
-                <input type="text" name="email" value="Your email address" onfocus="if(value=='Your email address'){value=''}" onblur="if(value==''){value='Your email address'}"><br>
-
-                <input type="text" name="phone" value="Your Mobile phone number" onfocus="if(value=='Your Mobile phone number'){value=''}" onblur="if(value==''){value='Your Mobile phone number'}"><br>
-
-                <input type="text" name="title" value="Submission" onfocus="if(value=='Submission'){value=''}" onblur="if(value==''){value='Submission'}"><br>
-
-                <textarea type="text" name="text" onload="value='Write your message here'" onfocus="if(value=='Write your message here'){value=''}" onblur="if(value==''){value='Write your message here'}"></textarea><br>
-
-                <br>
-                <input type="submit" class="button" value="Send" name="submit" onclick="">
-            </form>
+            {{ form_start(form) }}
+                {{ form_row(form.title) }}
+                {{ form_row(form.contact) }}
+                {{ form_row(form.submission) }}
+                {{ form_row(form.body) }}
+                {{ form_row(form.submit) }}
+            {{ form_end(form) }}
         </div>
         <div id="github" class="contact-graphic overall col-lg-6 col-12"></div>
         <div id="moveToTop" class="col-12"><a href="#" class="button">Przewiń do góry</a></div>

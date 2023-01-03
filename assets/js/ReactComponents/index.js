@@ -112,10 +112,10 @@ class Github extends React.Component {
                         <strong>Currently living in: </strong>{this.values.location}
                     </p>
                     <p>
-                        <strong>Last commit: </strong>{this.values.commitDate}
+                        <strong>Last commit date: </strong>{this.values.commitDate}
                     </p>
                     <p>
-                        <strong>Last commit: </strong>{this.values.commitMessage}
+                        <strong>Last commit message: </strong>{this.values.commitMessage}
                     </p>
                 </div>
             )
@@ -158,7 +158,7 @@ technologiesDiv.render(<Technologies />);
     // generowanie ostatniego commita wraz z datą
     for ( let event of events)
     {
-        if ("commits" in event['payload'] )
+        if ( event["type"] === "PushEvent"  )
         for ( let commit of event['payload']['commits'])
         {
             if ( commit['author']['name'] === gitHubUsername)

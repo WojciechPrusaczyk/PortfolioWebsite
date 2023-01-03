@@ -1,6 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+let gitHubUsername = "WojciechPrusaczyk";
+
+let githubData = {
+    status: "Loading...",
+    username: "",
+    bio: "",
+    imgUrl: "",
+    profileLink: "",
+    work: "Nowhere",
+    location: "Nowhere",
+    lastUpdate: "2021-07-09 10:32:34",
+}
+
 function Bar(props) {
     return (
     <div>
@@ -12,7 +25,7 @@ function Bar(props) {
     );
 }
 
-class Board extends React.Component {
+class Technologies extends React.Component {
     constructor(props) {
         super(props);
         this.values = {
@@ -70,15 +83,75 @@ class Board extends React.Component {
     );
 }}
 
-class Game extends React.Component {
+class Github extends React.Component {
+    constructor(props) {
+        super(props);
+        this.values = githubData;
+    }
     render() {
-        return (
-            <Board />
-        );
+            return (
+                <div>
+                    <img className="profilePicture" src={this.values.imgUrl} alt="profile picture"/>
+                    <p>
+                        <strong>Username: </strong>{this.values.username}
+                    </p>
+                    <p>
+                        <strong>Bio: </strong>{this.values.bio}
+                    </p>
+                    <p>
+                        <strong>Github profile link: </strong><a href={this.values.profileLink}>GitHub</a>
+                    </p>
+                    <p>
+                        <strong>Public repositories count: </strong>{this.values.repos}
+                    </p>
+                    <p>
+                        <strong>Currently working in: </strong>{this.values.work}
+                    </p>
+                    <p>
+                        <strong>Currently living in: </strong>{this.values.location}
+                    </p>
+                    <p>
+                        <strong>Last account update: </strong>{this.values.lastUpdate}
+                    </p>
+                </div>
+            )
     }
 }
 
-// ========================================
+const technologiesDiv = ReactDOM.createRoot(document.getElementById("technologies"));
+const githubDiv = ReactDOM.createRoot(document.getElementById("github"));
 
-const root = ReactDOM.createRoot(document.getElementById("technologies"));
-root.render(<Game />);
+technologiesDiv.render(<Technologies />);
+
+!async function(){
+    let data = await fetch("https://api.github.com/users/"+gitHubUsername)
+        .then((response) => response.json())
+        .then(data => {
+            return data;
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    let repos = await fetch("https://api.github.com/users/"+gitHubUsername+"/repos")
+        .then((response) => response.json())
+        .then(data => {
+            return data;
+        })
+        .catch(error => {
+            console.error(error);
+        });
+
+    githubData = {
+        status: "Done",
+        username: data['login']?data['login']:null,
+        bio: data['bio']?data['bio']:null,
+        imgUrl: data['avatar_url']?data['avatar_url']:null,
+        profileLink: data['html_url']?data['html_url']:null,
+        work: data['company']?data['company']:"Nowhere",
+        location: data['location']?data['location']:"Nowhere",
+        lastUpdate: data['updated_at']?data['updated_at'].substr(0,10)+" "+data['updated_at'].substr(11,8):"2021-07-09 10:32:34",
+        repos: repos.length,
+    }
+
+    githubDiv.render(<Github />);
+}();

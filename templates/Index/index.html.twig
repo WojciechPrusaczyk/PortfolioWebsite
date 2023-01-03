@@ -7,16 +7,16 @@
     <header>
         <ul class='sidebar'>
             <li class="col-lg-3 col-sm-6 col-12 text-center pt-2">
-                <a href='https://github.com/WojciechPrusaczyk'>
-                    <i class='bx bxl-github'></i>
-                    <p>&nbsp&nbspMy GitHub</p>
+                <a href='#github'>
+                    <i class='bx bxl-github' aria-hidden="true"></i>
+                    <p>My GitHub</p>
                 </a>
 
             </li>
 
             <li class="col-lg-3 col-sm-6 col-12 text-center pt-2">
                 <a href='#'>
-                    <i class='bx bxs-trophy' ></i>
+                    <i class='bx bxs-trophy' aria-hidden="true"></i>
                     <p>Achievements</p>
                 </a>
 
@@ -24,7 +24,7 @@
 
             <li class="col-lg-3 col-sm-6 col-12 text-center pt-2">
                 <a href='#technologies'>
-                    <i class='bx bx-code-curly' ></i>
+                    <i class='bx bx-code-curly' aria-hidden="true"></i>
                     <p>Technologies</p>
                 </a>
 
@@ -32,8 +32,8 @@
 
             <li class="col-lg-3 col-sm-6 col-12 text-center pt-2">
                 <a href='#contact'>
-                    <i class='bx bxs-contact' ></i>
-                     <p>Contact me</p>
+                    <i class='bx bxs-contact' aria-hidden="true"></i>
+                    <p>Contact me</p>
                 </a>
             </li>
         </ul>
@@ -41,15 +41,15 @@
 
     <div class='main paragraph'>
         <h1>Hello World!</h1>
-        <h1>My name is Wojciech Prusaczyk!</h1>
-        <br>
+        <p class="h1 mb-5">My name is Wojciech Prusaczyk!</p>
+        <h2>Welcome to my portfolio website</h2>
         <p>
-                <h2>Welcome to my portfolio website</h2>
-                My dream since 2012 is to become a "Web Developer". <br>
-                Once i created my first Website i promised myself, <br>
-                that someday this dream will become true. <br>
-                <br>
-                Check the links on the navigation bar to learn more about me :)
+            <span>In 2012 when I wrote first line of code I instantly fell in love with it.</span><br>
+            <span>Since then I'm focusing my life on self-improvement in coding, designing, programming and everything around it.</span>
+        </p>
+        <p>
+            <span>I'm aspiring to become Frontend developer, but with good understanding of how Backend works.</span><br>
+            <span>Check the links on the navigation bar to learn more about me :)</span>
         </p>
     </div>
 
@@ -58,13 +58,14 @@
     </div>
 
     <div id="technologies-header" class="align-content-center"><h1>My strength in technologies:</h1></div>
+
     <div id="technologies"></div>
 
     <div id="about-me" class="about-me paragraph">
 
     </div>
-    <div id="contact" class="contact paragraph">
-        <div class="contact-form overall col-lg-6 col-12 my-5">
+    <div id="footer-components" class="contact paragraph py-5">
+        <div id="contact" class="contact-form overall col-lg-6 col-12">
             <form action="mailer.php" method="POST">
                 <input type="text" name="name" value="Your Name" onfocus="if(value=='Your Name'){value=''}" onblur="if(value==''){value='Your Name'}"><br>
 
@@ -77,15 +78,14 @@
                 <textarea type="text" name="text" onload="value='Write your message here'" onfocus="if(value=='Write your message here'){value=''}" onblur="if(value==''){value='Write your message here'}"></textarea><br>
 
                 <br>
-                <input type="submit" value="Send" name="submit" onclick="style.color='#FBFBFF';style.borderColor='#FBFBFF';setTimeout(() => { style.color='#0B4F6C';style.borderColor='#0B4F6C'; }, 100);">
+                <input type="submit" class="button" value="Send" name="submit" onclick="">
             </form>
         </div>
-        <div class="contact-graphic overall col-lg-6 col-12">
-            Git
-        </div>
+        <div id="github" class="contact-graphic overall col-lg-6 col-12"></div>
+        <div id="moveToTop" class="col-12"><a href="#" class="button">Przewiń do góry</a></div>
     </div>
     <footer class="footer">
-        <h3>Designed & Developed by Wojciech Prusaczyk 2022</h3>
+        <p class="h3">Designed & Developed by Wojciech Prusaczyk 2023</p>
     </footer>
     {% block scripts %}
         {{ encore_entry_script_tags('react_js') }}

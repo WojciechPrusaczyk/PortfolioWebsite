@@ -170,9 +170,14 @@ header ul{
         }
     }
     #github{
+        text-align: center;
         .profilePicture{
+            border-radius: 50%;
             max-width: 20%;
             margin-bottom: 20px;
+        }
+        p > strong {
+            margin-right: 10px;
         }
     }
 }

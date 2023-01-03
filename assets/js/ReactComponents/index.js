@@ -176,7 +176,9 @@ technologiesDiv.render(<Technologies />);
             }
         }
     }
-
+    /*
+    TO DO: przerobić datę na obiekt daty i dodać do niej godzinę
+     */
     githubData = {
         status: "Done",
         username: data['login']?data['login']:null,

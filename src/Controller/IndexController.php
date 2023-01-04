@@ -12,6 +12,13 @@ class IndexController extends AbstractController
     public function index(): \Symfony\Component\HttpFoundation\Response
     {
         $form = $this->createForm(EmailType::class);
+
+        if ( $form->isSubmitted() )
+        {
+            $title = $form->get('title');
+            dd($title);
+        }
+
         return $this->render('/Index/index.html.twig', [
             'form' => $form->createView(),
             'title' => 'Wojciech Prusaczyk: portfolio',

@@ -136,7 +136,6 @@ header ul{
         input[type="text"], textarea{
             width: 60%;
             height: 40px;
-            font-size: 20px;
             text-decoration: none;
             color: $darkerGreenColour;
             text-align: center;
@@ -144,14 +143,15 @@ header ul{
             font-weight: bold;
             border: $greenColour 3px solid;
             background-color: $darkerBgColour;
+            font-size:0.8rem;
             &:hover{
                 text-decoration: none;
-                width: 60.5%;
+                width: 61%;
             }
             &:focus{
-                width: 62%;
+                font-size:0.9rem;
+                width: 65%;
                 height: 42px;
-                font-size:1.3rem;
                 outline: none;
             }
         }
@@ -160,20 +160,22 @@ header ul{
             text-align: center;
             label{
                 color: $greenColour;
+                font-weight: bold;
             }
         }
         textarea{
-            height: 200px;
+            height: 250px;
             resize: none;
             padding-left: 5px;
             padding-top: 3px;
+            font-size:0.8rem;
             &:hover{
                 text-decoration: none;
-                width: 60%;
+                width: 61%;
             }
             &:focus{
-                width: 60%;
-                height: 200px;
+                width: 65%;
+                height: 250px;
                 font-size:0.9rem;
                 outline: none;
             }
@@ -195,6 +197,9 @@ header ul{
 
         p > strong {
             margin-right: 10px;
+        }
+        a {
+            color: $greenColour;
         }
     }
 }

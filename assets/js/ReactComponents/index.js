@@ -123,7 +123,6 @@ class Github extends React.Component {
 }
 
 const technologiesDiv = ReactDOM.createRoot(document.getElementById("technologies"));
-const githubDiv = ReactDOM.createRoot(document.getElementById("github"));
 
 technologiesDiv.render(<Technologies />);
 
@@ -191,7 +190,6 @@ technologiesDiv.render(<Technologies />);
         commitMessage: commitMessage,
         repos: repos.length,
     }
-    console.log(githubData);
-
+    const githubDiv = ReactDOM.createRoot(document.getElementById("github"));
     githubDiv.render(<Github />);
 }();

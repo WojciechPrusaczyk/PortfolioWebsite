@@ -17,15 +17,17 @@ Encore
         from: './assets/images',
         to: 'images/[path][name].[ext]'
     })
-    /*
-     * ENTRY CONFIG
-     *
-     * Each entry will result in one JavaScript file (e.g. app.js)
-     * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
-     */
+    // Scripts
     .addEntry('app', './assets/app.js')
-    .addEntry('react_js', './assets/js/ReactComponents/index.js')
+
+    // React components
+    .addEntry('react_github', './assets/js/ReactComponents/github.js')
+    .addEntry('react_technologies', './assets/js/ReactComponents/technologies.js')
+
+    // Styles
     .addStyleEntry('index_style', './assets/styles/style.scss')
+
+
     // .addStyleEntry('react_style', './assets/styles/index.scss')
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')

@@ -16,7 +16,7 @@ class IndexController extends AbstractController
         if ( $form->isSubmitted() )
         {
             $title = $form->get('title');
-            dd($title);
+
         }
 
         return $this->render('/Index/index.html.twig', [

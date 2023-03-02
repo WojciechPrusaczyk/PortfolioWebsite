@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Email;
 use App\Form\EmailType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -11,11 +12,12 @@ class IndexController extends AbstractController
     #[Route('/', name: 'app_index')]
     public function index(): \Symfony\Component\HttpFoundation\Response
     {
-        $form = $this->createForm(EmailType::class);
+        $email = new Email();
+
+        $form = $this->createForm(EmailType::class, $email);
 
         if ( $form->isSubmitted() )
         {
-            $title = $form->get('title');
 
         }
 

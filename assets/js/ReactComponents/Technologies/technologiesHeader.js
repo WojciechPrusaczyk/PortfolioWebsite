@@ -3,9 +3,9 @@ import React from "react";
 function Details(props) {
     return (
         <div className="progressBarParent" data-techn-name={props.name}>
-            <p><div className={"nameWithLogo"}><img src={props.source} alt={props.name + " logo"} className=""/><h3 className={"my-1"}>{props.name}</h3></div></p>
+            <p><div className={"nameWithLogo"}><img src={props.source} alt={props.name + " logo"} className="icon"/><h3 className={"my-1"}>{props.name}</h3></div></p>
             <div className="progressBar">
-                <div className="progress" style={{width: props.progress}}>&nbsp;</div>
+                <div className="progress" style={{width: props.progress}}><span className="progress-percent">{props.progress}</span></div>
             </div>
         </div>
     );
@@ -51,7 +51,7 @@ class TechnologiesHeader extends React.Component {
                     {this.renderBar("ReactJS", "/build/images/ReactJS.png", 30)}
                     <br/><br/>
 
-                    {this.renderBar("MariaDB / SQL Lite", "/build/images/MariaDB.png", 75)}
+                    {this.renderBar("MariaDB", "/build/images/MariaDB.png", 75)}
                     <br/><br/>
 
                     {this.renderBar("Zend", "", 30)}

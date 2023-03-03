@@ -67,14 +67,15 @@ header ul{
         }
 }
 #technologies-header{
-    text-align: center;
-    margin-bottom: 4rem;
-}
-#technologies{
     flex-wrap: wrap;
     display: flex;
     justify-content: space-around;
     align-items: center;
+
+    .progressBarParent:hover {
+        cursor: pointer;
+    }
+
     h1{
         width: auto;
         justify-content: center;
@@ -133,7 +134,7 @@ header ul{
             display: flex;
             justify-content: center;
         }
-        input[type="text"], textarea{
+        input[type="text"], input[type="email"], textarea{
             width: 60%;
             height: 40px;
             text-decoration: none;

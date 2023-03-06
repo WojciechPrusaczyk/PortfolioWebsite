@@ -1,21 +1,19 @@
 import React from "react";
-import ReactHtmlParser from 'react-html-parser';
 
 function Description(props)
 {
-    if ( props.hidden)
+    if ( props.hidden == false)
     {
         return (
-            <div className="technology-descripton">
-                <h2>{props.name}</h2>
-                <p>{ ReactHtmlParser ( props.description ) }</p>
+            <div id={props.name} className="technology-desc">
+                <h2 className="technology-desc-header">{props.name}</h2>
+                <p className="technology-desc-content">{ props.description }</p>
             </div>
         );
     } else {
         return null;
     }
 }
-
 
 class Technologies extends React.Component{
 
@@ -24,7 +22,7 @@ class Technologies extends React.Component{
         this.values = {
             name: "",
             description: "",
-            hidden: true,
+            hidden: false,
         }
     }
 
@@ -33,14 +31,20 @@ class Technologies extends React.Component{
             <Description
                 name={name}
                 description={description}
+                hidden={false}
             /> );
+    }
+
+    hideElement(name)
+    {
+        console.log(name);
     }
 
     render() {
         return (
-            <div>
+            <div className="technology-desc-root">
                 {
-                    this.renderDescription("PHP",
+                    this.renderDescription("php",
                         "Actually PHP is my strongest argument. " +
                         "I have a good understanding of objective programming which really helps in PHP environment. " +
                         "I can fetch data with parsers and process it in many ways. " +
@@ -50,7 +54,7 @@ class Technologies extends React.Component{
                     )
                 }
                 {
-                    this.renderDescription("JavaScript",
+                    this.renderDescription("javascript",
                         "This language is my second most known language. " +
                         "I'm familiar with fetching data from APIs (fetch and AJAX methods)," +
                         " processing it and then displaying data in the appropriate way. " +
@@ -58,32 +62,32 @@ class Technologies extends React.Component{
                     )
                 }
                 {
-                    this.renderDescription("VBA",
+                    this.renderDescription("vba",
                         "More like fun fact, because I was using it mostly for automating data processing in Excel. " +
                         "I was using VBA to pass an IT mature exam (actually fun and effective way to get good grade). "
                     )
                 }
                 {
-                    this.renderDescription("Symfony",
+                    this.renderDescription("symfony",
                         "My another strong argument, because Symfony is for me the most known Framework for now. " +
                         "I have deep knowledge about Symfony environment, entities, controllers, and entire MVC model. "
                     )
                 }
                 {
-                    this.renderDescription("ReactJS",
+                    this.renderDescription("reactjs",
                     "Actually I'm learning how to use this framework properly. " +
                     "I have good basics of JS and objective programming and for now i just need some good practise. " +
                     "I understand components model of the framework and I can write basic components. "
                     )
                 }
                 {
-                    this.renderDescription("MariaDB",
+                    this.renderDescription("mariadb",
                         "For me MariaDB along with MySQL are engines, that I'm familiar since I started my CS adventure. " +
                         "I have very good basics, and understanding of what is going on inside of these database engines. "
                     )
                 }
                 {
-                    this.renderDescription("Zend",
+                    this.renderDescription("zend",
                         "This is the framework i was working with in my first job as Fullstack Dev. " +
                         "I've never made an actual controller, but I became familiar with Zend's MVC model. " +
                         "Mostly I was dealing with CSS, JS and adjusting websites for WCAG purposes. " +
@@ -91,27 +95,28 @@ class Technologies extends React.Component{
                     )
                 }
                 {
-                    this.renderDescription("HTML5",
+                    this.renderDescription("html5",
                         "Actually I have much higher than common understanding and knowledge about html. " +
                         "I know semantic tags, aria properties and basic rules of good HTML code, " +
                         "that is accessible for people with disabilities. "
                     )
                 }
                 {
-                    this.renderDescription("CSS",
+                    this.renderDescription("css",
                         "I'm pretty common on CSS, but I already know how to use it with JS in an effective way. " +
                         "I also have good sense of style, so I'm able to work and exchange my experience with designers. " +
-                        "Also I know how to use CSS to make website accessible for all users. "
+                        "Also I know how to use CSS to make website accessible for all users. " +
+                        "Mostly I'm working with SASS preprocessor (through yarn) which helps making clean and effective css code."
                     )
                 }
                 {
-                    this.renderDescription("Bootstrap",
+                    this.renderDescription("bootstrap",
                         "As far as I know CSS I just love using Bootstrap in many possible ways. " +
                         "It helps me with positioning and RWD with ready to use classes, which I'm using in a very effective way. "
                     )
                 }
                 {
-                    this.renderDescription("Unity",
+                    this.renderDescription("unity",
                         "I'm not yet a game developer, but I made a first steps into coding games. " +
                         "I participated in game jams, where I made 2 games with my team in a small amount of time. " +
                         "Making this games, showed me how to games are made and how to work with people effectively. " +

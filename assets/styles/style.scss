@@ -97,7 +97,6 @@ header ul{
                 display: flex;
             }
             .icon{
-                filter: drop-shadow(0 0 2px black) drop-shadow(0 0 3px black);
                 max-width: 3rem;
                 max-height: 3rem;
             }
@@ -246,8 +245,30 @@ header ul{
         border: 4px solid $darkerBgColour;
     }
 }
-#moveToTop{
-
+#technologies > .technology-desc-root{
+    display: flex;
+    flex-wrap: wrap;
+    .technology-desc{
+        margin: 10px 20%;
+        &-header{
+            background: $darkerBgColour;
+            width: 100%;
+            height: 60px;
+            margin: 0;
+            align-content: center;
+            display: grid;
+            padding: 0 2%;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1.6rem;
+        }
+        &-content{
+            background: $midBgColour;
+            width: 100%;
+            padding: 15px 5%;
+            font-size: 1.3rem;
+        }
+    }
 }
 
 @keyframes backgroundColorPalette {

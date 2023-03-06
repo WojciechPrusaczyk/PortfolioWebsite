@@ -9,3 +9,4 @@ const technologiesDiv = ReactDOM.createRoot(document.getElementById("technologie
 
 technologiesHeaderDiv.render(<TechnologiesHeader />);
 technologiesDiv.render(<Technologies />);
+

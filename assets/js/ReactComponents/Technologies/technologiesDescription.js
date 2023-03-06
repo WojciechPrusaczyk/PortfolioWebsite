@@ -1,31 +1,36 @@
 import React from "react";
 
-function Description(props)
+class Description extends React.Component
 {
-    if ( props.hidden == false)
-    {
-        return (
-            <div id={props.name} className="technology-desc">
-                <h2 className="technology-desc-header">{props.name}</h2>
-                <p className="technology-desc-content">{ props.description }</p>
-            </div>
-        );
-    } else {
-        return null;
-    }
-}
-
-class Technologies extends React.Component{
-
     constructor(props) {
         super(props);
         this.values = {
-            name: "",
-            description: "",
-            hidden: false,
+            name: props.name,
+            description: props.description,
+            hidden: props.hidden,
         }
     }
 
+    setHidden(value)
+    {
+        this.values.hidden = value;
+    }
+
+    render() {
+        if ( this.values.hidden == false)
+        {
+            return (
+                <div id={this.values.name} className="technology-desc" data-is-hidden="true" style={{display: "none"}}>
+                    <h2 className="technology-desc-header">{this.values.name}</h2>
+                    <p className="technology-desc-content">{ this.values.description }</p>
+                </div>
+            );
+        } else {
+            return null;
+        }
+    }
+}
+class Technologies extends React.Component{
     renderDescription(name, description){
         return (
             <Description
@@ -33,11 +38,6 @@ class Technologies extends React.Component{
                 description={description}
                 hidden={false}
             /> );
-    }
-
-    hideElement(name)
-    {
-        console.log(name);
     }
 
     render() {
@@ -69,7 +69,7 @@ class Technologies extends React.Component{
                 }
                 {
                     this.renderDescription("symfony",
-                        "My another strong argument, because Symfony is for me the most known Framework for now. " +
+                        "My another strong argument, Symfony is for me the most known Framework for now. " +
                         "I have deep knowledge about Symfony environment, entities, controllers, and entire MVC model. "
                     )
                 }
@@ -103,7 +103,7 @@ class Technologies extends React.Component{
                 }
                 {
                     this.renderDescription("css",
-                        "I'm pretty common on CSS, but I already know how to use it with JS in an effective way. " +
+                        "I am above average when it comes to CSS, but I already know how to use it with JS in an effective way. " +
                         "I also have good sense of style, so I'm able to work and exchange my experience with designers. " +
                         "Also I know how to use CSS to make website accessible for all users. " +
                         "Mostly I'm working with SASS preprocessor (through yarn) which helps making clean and effective css code."
@@ -118,8 +118,8 @@ class Technologies extends React.Component{
                 {
                     this.renderDescription("unity",
                         "I'm not yet a game developer, but I made a first steps into coding games. " +
-                        "I participated in game jams, where I made 2 games with my team in a small amount of time. " +
-                        "Making this games, showed me how to games are made and how to work with people effectively. " +
+                        "My team participated in game jams, where I made 2 games in a small amount of time. " +
+                        "Process of making this games showed me how they are made and how to work with people effectively. " +
                         "I was also trying myself with Unreal Engine, " +
                         "but only thing I've done is designing map and putting components together."
                     )
@@ -128,7 +128,5 @@ class Technologies extends React.Component{
         );
     }
 }
-
-
 
 export default Technologies;

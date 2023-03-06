@@ -2,10 +2,23 @@ import React from "react";
 import TechnologiesDescription from "./technologiesDescription";
 import {findDOMNode} from "react-dom";
 
+const $ = require('jquery');
 function Details(props) {
     return (
         <div className="progressBarParent" data-techn-name={props.name} onClick={ () => {
-            console.log(findDOMNode(<TechnologiesDescription name={}/>));
+            var element = document.getElementById(props.name);
+            $(".technology-desc").each(function (){
+                $(this).hide();
+                $(element).data('is-hidden', true);
+            })
+            if ( $(element).data('is-hidden') == true ) {
+                $(element).show();
+                $(element).data('is-hidden', false);
+            }
+            var url = new URL(window.location.href);
+            url.hash = "technologies";
+            window.location.href = url.href;
+
         }}>
             <p><div className={"nameWithLogo"}><img src={props.source} alt={props.name + " logo"} className="icon"/><h3 className={"my-1"}>{props.name}</h3></div></p>
             <div className="progressBar">

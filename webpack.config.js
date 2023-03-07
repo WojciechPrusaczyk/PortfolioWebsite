@@ -23,6 +23,7 @@ Encore
     // React components
     .addEntry('react_github', './assets/js/ReactComponents/github.js')
     .addEntry('react_technologies', './assets/js/ReactComponents/technologies.js')
+    .addEntry('react_about_me', './assets/js/ReactComponents/aboutMe.js')
 
     // Styles
     .addStyleEntry('index_style', './assets/styles/style.scss')

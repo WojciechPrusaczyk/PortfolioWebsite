@@ -15,9 +15,9 @@
             </li>
 
             <li class="col-lg-3 col-sm-6 col-12 text-center pt-2">
-                <a href='#'>
+                <a href='#about-me'>
                     <i class='bx bxs-trophy' aria-hidden="true"></i>
-                    <p>Achievements</p>
+                    <p>About me</p>
                 </a>
 
             </li>
@@ -62,6 +62,7 @@
     <div id="technologies"></div>
 
     <div id="about-me" class="about-me paragraph">
+        <h1>About me</h1>
 
     </div>
     <div id="footer-components" class="contact paragraph py-5">
@@ -82,5 +83,6 @@
     {% block scripts %}
         {{ encore_entry_script_tags('react_github') }}
         {{ encore_entry_script_tags('react_technologies') }}
+        {{ encore_entry_script_tags('react_about_me') }}
     {% endblock %}
 {% endblock %}

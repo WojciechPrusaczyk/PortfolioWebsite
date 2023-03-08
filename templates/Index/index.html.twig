@@ -67,12 +67,16 @@
     </div>
     <div id="footer-components" class="contact paragraph py-5">
         <div id="contact" class="contact-form overall col-lg-6 col-12">
-            {{ form_start(form) }}
-                {{ form_row(form.title) }}
-                {{ form_row(form.contact) }}
-                {{ form_row(form.body) }}
-                {{ form_row(form.submit) }}
-            {{ form_end(form) }}
+            {% if emailSend is defined and emailSend == true %}
+                Już wysłano email!
+            {% else %}
+                {{ form_start(form) }}
+                    {{ form_row(form.title) }}
+                    {{ form_row(form.contact) }}
+                    {{ form_row(form.body) }}
+                    {{ form_row(form.submit) }}
+                {{ form_end(form) }}
+            {% endif %}
         </div>
         <div id="github" class="contact-graphic overall col-lg-6 col-12"></div>
         <div id="moveToTop" class="col-12"><a href="#" class="button">Przewiń do góry</a></div>

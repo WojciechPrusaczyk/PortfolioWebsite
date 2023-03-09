@@ -13,17 +13,21 @@ use Symfony\Component\Routing\Annotation\Route;
 class IndexController extends AbstractController
 {
     #[Route('/', name: 'app_index')]
-    public function index(MailerInterface $mailer, Request $request, bool $emailsend = null): Response
+    public function index(MailerInterface $mailer, Request $request): Response
     {
         $emailEntity = new Email();
 
+        // przygotowanie formularza
         $form = $this->createForm(EmailType::class, $emailEntity);
-
         $form->handleRequest($request);
+
         if ( $form->isSubmitted() && $form->isValid())
         {
+            /*
+             * Przygotowanie maila
+             */
             $email = (new \Symfony\Component\Mime\Email())
-                ->to('woj.prusaczyk@gmail.com')
+                ->to('reciever@serwer2331346.home.pl')
                 ->from('reciever@serwer2331346.home.pl')
                 ->subject($emailEntity->getTitle())
                 ->html(
@@ -31,15 +35,34 @@ class IndexController extends AbstractController
                     $emailEntity->getBody()."</p>"
                 );
 
-            $mailer->send($email);
+            /*
+             * Wysyłka maila
+             */
+            try{
+                $mailer->send($email);
 
-            return $this->redirectToRoute('app_index', [ 'emailsend' => true ]);
+                // Wysyłka kopii na skrzynkę główną
+                if ($this->getParameter('app.saveCopies') == "true")
+                {
+                    try{
+                        $email->to('woj.prusaczyk@gmail.com');
+                        $mailer->send($email);
+                    } catch (\Exception $exception){}
+                }
+
+                // przekierowanie na stronę główną
+                $this->addFlash('success', "Pomyślnie wysłano maila");
+                return $this->redirectToRoute('app_index');
+
+            } catch (\Exception $exception)
+            {
+                $this->addFlash('error', "Wystąpił błąd");
+            }
         }
 
         return $this->render('/Index/index.html.twig', [
             'form' => $form->createView(),
             'title' => 'Wojciech Prusaczyk: portfolio',
-            'emailSend' => $emailsend,
         ]);
     }
 }

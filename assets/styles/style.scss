@@ -102,6 +102,7 @@ header ul{
             }
             h3{
                 margin-left: 5px;
+                text-transform: uppercase;
             }
         }
         .progressBar{
@@ -196,6 +197,16 @@ header ul{
                 outline: none;
             }
         }
+        ul{
+            list-style: none;
+            color: $darkerBgColour;
+            background: $greenColour;
+            width: 60%;
+            margin: auto;
+            li::after{
+                content: " !";
+            }
+        }
     }
     #github{
         text-align: center;
@@ -286,7 +297,7 @@ header ul{
             transition: transform 1s;
             border-bottom: 8px solid $greenColour;
             &:hover{
-                transform: scale(1.02);
+                transform: scale(1.05);
                 transition: transform 1s;
             }
             &-header{
@@ -306,7 +317,7 @@ header ul{
 }
 a{
     color: #a7ffe5;
-    text-decoration: none;
+    text-decoration: underline;
     &:hover{
         color: #a7ffe5;
         text-decoration: underline;

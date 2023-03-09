@@ -49,6 +49,8 @@ class TechnologiesHeader extends React.Component {
     render() {
         return (
             <div className="technologies paragraph flex-row row justify-content-around">
+                <h1>My strength in technologies:</h1>
+                <span className="text-center mb-4">this is only to compare my abilities</span>
                 <div className="flex-column col-xl-3 col-sm-5 col-12">
                     <h2>Programming languages</h2><br/>
                     {this.renderBar("php", "/build/images/PHP.png", 70)}

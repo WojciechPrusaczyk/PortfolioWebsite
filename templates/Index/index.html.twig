@@ -23,7 +23,7 @@
             </li>
 
             <li class="col-lg-3 col-sm-6 col-12 text-center pt-2">
-                <a href='#technologies'>
+                <a href='#technologies-header'>
                     <i class='bx bx-code-curly' aria-hidden="true"></i>
                     <p>Technologies</p>
                 </a>
@@ -57,7 +57,7 @@
     <div id="achievements" class="achievements paragraph">
     </div>
 
-    <div id="technologies-header" class="align-content-center"><h1>My strength in technologies:</h1></div>
+    <div id="technologies-header" class="align-content-center"></div>
 
     <div id="technologies"></div>
 
@@ -67,9 +67,17 @@
     </div>
     <div id="footer-components" class="contact paragraph py-5">
         <div id="contact" class="contact-form overall col-lg-6 col-12">
-            {% if emailSend is defined and emailSend == true %}
-                Już wysłano email!
-            {% else %}
+            {% for message in app.flashes('error') %}
+                <div class="alert alert-danger w-75 m-auto mb-3">
+                    {{ message }}
+                </div>
+            {% endfor %}
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success w-75 m-auto mb-3">
+                    {{ message }}
+                </div>
+            {% endfor %}
+            {% if not ( app.flashes('success')|length > 0 ) %}
                 {{ form_start(form) }}
                     {{ form_row(form.title) }}
                     {{ form_row(form.contact) }}
@@ -79,7 +87,7 @@
             {% endif %}
         </div>
         <div id="github" class="contact-graphic overall col-lg-6 col-12"></div>
-        <div id="moveToTop" class="col-12"><a href="#" class="button">Przewiń do góry</a></div>
+        <div id="moveToTop" class="col-12"><a href="#" class="button">Swipe up</a></div>
     </div>
     <footer class="footer">
         <p class="h3">Designed & Developed by Wojciech Prusaczyk 2023</p>

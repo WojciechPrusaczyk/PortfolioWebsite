@@ -82,7 +82,8 @@ class Github extends React.Component {
     let commitDate = "";
 
     // generowanie ostatniego commita wraz z datą
-    for ( let event of events)
+    if ( events.length > 0)
+    for ( let event of events )
     {
         if ( event["type"] === "PushEvent"  )
         for ( let commit of event['payload']['commits'])

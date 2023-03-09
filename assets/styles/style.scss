@@ -12,8 +12,38 @@ body{
     font-family: Helvetica;
 }
 .main{
-    margin-left: 15%;
+    margin-left: 50px;
     margin-top: 5%;
+    width: 70%;
+    @media screen and ( max-width: 1200px ){
+        margin-left: 15px;
+        margin-right: 15px;
+        width: 50%;
+    }
+    @media screen and ( max-width: 700px ){
+        width: 100%;
+    }
+    margin-bottom: 30px;
+    &-photo{
+        width: calc( 30% - 50px );
+        text-align: center;
+        @media screen and ( max-width: 1200px ){
+            width: calc( 50% - 30px );
+        }
+        @media screen and ( max-width: 700px ){
+            width: 100%;
+        }
+        img{
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+        }
+    }
+}
+.landing-content{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 .footer{
     width: 100%;
@@ -25,7 +55,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px;
+    padding: 15px;
     p {
         margin-top: 10px;
     }
@@ -71,9 +101,16 @@ header ul{
     display: flex;
     justify-content: space-around;
     align-items: center;
-
     .progressBarParent:hover {
         cursor: pointer;
+        .icon{
+            transition: filter 1s;
+            filter: drop-shadow(0 0 7px #85b7a0) drop-shadow(0 0 16px #8a8a8a);
+        }
+        .progressBar{
+            color: $darkerBgColour;
+            transition: color 1s;
+        }
     }
 
     h1{
@@ -99,6 +136,7 @@ header ul{
             .icon{
                 max-width: 3rem;
                 max-height: 3rem;
+                transition: filter 1s;
             }
             h3{
                 margin-left: 5px;
@@ -109,11 +147,8 @@ header ul{
             border: 3px solid $darkerBgColour;
             height: 35px;
             width: 100%;
+            transition: color .5s;
             color: $greenColour;
-            &:hover {
-                color: $darkerBgColour;
-                transition: color .5s;
-            }
             .progress{
                 background-color: $greenColour;
                 height: 100%;
@@ -152,6 +187,9 @@ header ul{
         }
         input[type="text"], input[type="email"], textarea{
             width: 60%;
+            @media screen and ( max-width: 576px ){
+                width: 90%;
+            }
             height: 40px;
             text-decoration: none;
             color: $darkerGreenColour;
@@ -171,6 +209,14 @@ header ul{
                 height: 42px;
                 outline: none;
             }
+            @media screen and ( max-width: 576px ){
+                &:hover{
+                    width: 91%;
+                }
+                &:focus{
+                    width: 95%;
+                }
+            }
         }
         div{
             margin-bottom: 10px;
@@ -188,13 +234,10 @@ header ul{
             font-size:0.8rem;
             &:hover{
                 text-decoration: none;
-                width: 61%;
             }
             &:focus{
-                width: 65%;
                 height: 250px;
                 font-size:0.9rem;
-                outline: none;
             }
         }
         ul{
@@ -261,6 +304,9 @@ header ul{
     flex-wrap: wrap;
     .technology-desc{
         margin: 10px 20%;
+        @media screen and ( max-width: 576px ){
+            margin: 10px 5%;
+        }
         box-shadow: 2px 2px 10px #010202;
         background: $midBgColour;
         &-header{
@@ -292,6 +338,12 @@ header ul{
         justify-content: space-between;
         &-component{
             width: 28%;
+            @media screen and ( max-width: 992px ){
+                width: 45%;
+            }
+            @media screen and ( max-width: 576px ){
+                width: 100%;
+            }
             box-shadow: 2px 2px 10px #010202;
             margin: 20px 0;
             transition: transform 1s;

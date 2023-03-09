@@ -50,42 +50,35 @@ class TechnologiesHeader extends React.Component {
         return (
             <div className="technologies paragraph flex-row row justify-content-around">
                 <h1>My strength in technologies:</h1>
-                <span className="text-center mb-4">this is only to compare my abilities</span>
+                <span className="text-center mb-4">this is only to compare my abilities, not my actual level</span>
                 <div className="flex-column col-xl-3 col-sm-5 col-12">
                     <h2>Programming languages</h2><br/>
                     {this.renderBar("php", "/build/images/PHP.png", 70)}
-                    <br/><br/>
 
                     {this.renderBar("javascript", "/build/images/JS.png", 65)}
-                    <br/><br/>
 
-                    {this.renderBar("vba", "/build/images/VB.png", 35)}
-                    <br/><br/>
+                    {this.renderBar("C#", "/build/images/csharp.png", 35)}
                 </div>
                 <div className="flex-column col-xl-3 col-sm-5 col-12 m-sm-0 m-5">
-                    <h2>Frameworks and DataBases</h2><br/>
+                    <h2>Frameworks and DataBases</h2>
                     {this.renderBar("symfony", "/build/images/Symfony.png", 70)}
-                    <br/><br/>
 
                     {this.renderBar("reactjs", "/build/images/ReactJS.png", 30)}
-                    <br/><br/>
 
-                    {this.renderBar("mariadb", "/build/images/MariaDB.png", 75)}
-                    <br/><br/>
+                    {this.renderBar("mysql", "/build/images/mysql.png", 75)}
 
-                    {this.renderBar("zend", "", 30)}
-                    <br/><br/>
+                    {this.renderBar("zend", "/build/images/zend.png", 30)}
                 </div>
                 <div className="flex-column col-xl-3 col-sm-6 col-12 m-sm-0 m-5">
-                    <h2>Other tools</h2><br/>
+                    <h2>Other tools</h2>
 
-                    {this.renderBar("hmtl5", "/build/images/HTML5.png", 80)}
-                    <br/><br/>
+                    {this.renderBar("html5", "/build/images/html.png", 80)}
 
-                    {this.renderBar("css", "/build/images/HTML5.png", 65)}
+                    {this.renderBar("css", "/build/images/css.png", 65)}
 
-                    {this.renderBar("unity", "/build/images/HTML5.png", 23)}
-                    <br/><br/>
+                    {this.renderBar("unity", "/build/images/unity.png", 23)}
+
+                    {this.renderBar("bootstrap", "/build/images/bootstrap.png", 85)}
                 </div>
             </div>
         );

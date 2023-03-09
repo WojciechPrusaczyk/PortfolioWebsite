@@ -81,8 +81,8 @@ class Technologies extends React.Component{
                     )
                 }
                 {
-                    this.renderDescription("mariadb",
-                        "For me MariaDB along with MySQL are engines, that I'm familiar since I started my CS adventure. " +
+                    this.renderDescription("mysql",
+                        "For me MySQL is engine, that I'm familiar since I started my Computer Science adventure. " +
                         "I have very good basics, and understanding of what is going on inside of these database engines. "
                     )
                 }
@@ -98,7 +98,7 @@ class Technologies extends React.Component{
                     this.renderDescription("html5",
                         "Actually I have much higher than common understanding and knowledge about html. " +
                         "I know semantic tags, aria properties and basic rules of good HTML code, " +
-                        "that is accessible for people with disabilities. "
+                        "that is accessible for all people. "
                     )
                 }
                 {

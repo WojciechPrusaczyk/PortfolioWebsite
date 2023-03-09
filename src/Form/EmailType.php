@@ -16,13 +16,15 @@ class EmailType extends AbstractType
     {
         $builder
             ->add('title', TextType::class, [
+                'label' => 'Title',
                 'required' => false,
-
             ])
             ->add('contact', \Symfony\Component\Form\Extension\Core\Type\EmailType::class, [
+                'label' => 'Your email',
                 'required' => false,
             ])
             ->add('body', TextareaType::class, [
+                'label' => 'Email body',
                 'required' => false,
                 'attr' => [
                     'spellcheck' => 'false',
